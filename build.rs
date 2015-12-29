@@ -38,8 +38,10 @@ fn main() {
     // NOTE: MSVC has to link to release libs to avoid CRT mismatch
     println!("cargo:rustc-link-lib=static=assimp");
 
-    // Link to libstdc++ on GNU
-    if target.contains("gnu") {
+    // Link to libstdc++
+    if target.contains("windows-gnu") {
+        println!("cargo:rustc-link-lib=static=stdc++");
+    } else {
         println!("cargo:rustc-link-lib=stdc++");
     }
 
