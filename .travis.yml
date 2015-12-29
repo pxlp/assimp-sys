@@ -19,9 +19,12 @@ before_script:
   - cargo -V
 
 script:
-  - travis-cargo build
-  - travis-cargo test
-  - travis-cargo --only stable doc
+  - cargo build
+  - cargo test
 
 after_success:
-  - travis-cargo --only stable doc-upload
+  # travis-cargo doesn't run on osx: https://github.com/huonw/travis-cargo/issues/26
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then pip install 'travis-cargo<0.2' --user; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then export PATH=$HOME/.local/bin:$PATH; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then travis-cargo --only stable doc; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then travis-cargo --only stable doc-upload; fi
