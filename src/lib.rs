@@ -1,5 +1,6 @@
 #[macro_use]
 extern crate bitflags;
+extern crate libz_sys;
 
 pub use anim::*;
 pub use camera::*;

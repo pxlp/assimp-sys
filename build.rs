@@ -34,19 +34,14 @@ fn main() {
         .build();
     println!("cargo:rustc-link-search=native={}", dst.join("lib").display());
 
-
-    // Link to correct versions of assimp and zlib
+    // Link to correct versions of assimp
     // NOTE: MSVC has to link to release libs to avoid CRT mismatch
     println!("cargo:rustc-link-lib=static=assimp");
-    if !pkg_config::find_library("zlib").is_ok() {
-        println!("cargo:rustc-link-lib=static=zlibstatic");
-    }
 
     // Link to libstdc++ on GNU
     if target.contains("gnu") {
         println!("cargo:rustc-link-lib=stdc++");
     }
-
 
     println!("cargo:rerun-if-changed=build.rs");
 }
@@ -69,16 +64,11 @@ fn temp_mingw_hack() {
         .current_dir(&Path::new(&out_dir)), "cmake");
 
     temp_mingw_hack_run(Command::new("mingw32-make").args(&[
-        "zlibstatic",
         "assimp"
         ])
         .current_dir(&Path::new(&out_dir)), "mingw32-make");
 
     println!("cargo:rustc-link-search=native={}", Path::new(&out_dir).join("code").to_str().unwrap());
-    println!("cargo:rustc-link-search=native={}", Path::new(&out_dir).join("contrib").join("zlib").to_str().unwrap());
-    if !pkg_config::find_library("zlib").is_ok() {
-        println!("cargo:rustc-link-lib=static=zlibstatic");
-    }
     println!("cargo:rustc-link-lib=static=assimp");
     println!("cargo:rustc-link-lib=static=stdc++");
 }
