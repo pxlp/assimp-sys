@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AiMesh` struct in crate `assimp_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AiMesh">
+
+    <title>assimp_sys::AiMesh - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>assimp_sys</a></p><script>window.sidebarCurrent = {name: 'AiMesh', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>assimp_sys</a>::<wbr><a class='struct' href=''>AiMesh</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-1752' class='srclink' href='../src/assimp_sys/mesh.rs.html#73-91' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AiMesh {
+    pub primitive_types: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub num_vertices: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub num_faces: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub vertices: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiVector3D.html' title='assimp_sys::AiVector3D'>AiVector3D</a></a>,
+    pub normals: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiVector3D.html' title='assimp_sys::AiVector3D'>AiVector3D</a></a>,
+    pub tangents: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiVector3D.html' title='assimp_sys::AiVector3D'>AiVector3D</a></a>,
+    pub bitangents: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiVector3D.html' title='assimp_sys::AiVector3D'>AiVector3D</a></a>,
+    pub colors: <a href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiColor4D.html' title='assimp_sys::AiColor4D'>AiColor4D</a></a>; AI_MAX_NUMBER_OF_COLOR_SETS]</a>,
+    pub texture_coords: <a href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiVector3D.html' title='assimp_sys::AiVector3D'>AiVector3D</a></a>; AI_MAX_NUMBER_OF_TEXTURECOORDS]</a>,
+    pub num_uv_components: <a href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>; AI_MAX_NUMBER_OF_TEXTURECOORDS]</a>,
+    pub faces: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiFace.html' title='assimp_sys::AiFace'>AiFace</a></a>,
+    pub num_bones: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub bones: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiBone.html' title='assimp_sys::AiBone'>AiBone</a></a></a>,
+    pub material_index: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub name: <a class='struct' href='../assimp_sys/struct.AiString.html' title='assimp_sys::AiString'>AiString</a>,
+    pub num_anim_meshes: <a class='type' href='https://doc.rust-lang.org/nightly/std/os/raw/type.c_uint.html' title='std::os::raw::c_uint'>c_uint</a>,
+    pub anim_meshes: <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../assimp_sys/struct.AiAnimMesh.html' title='assimp_sys::AiAnimMesh'>AiAnimMesh</a></a></a>,
+}</pre><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.primitive_types'><code>primitive_types</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.num_vertices'><code>num_vertices</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.num_faces'><code>num_faces</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.vertices'><code>vertices</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.normals'><code>normals</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.tangents'><code>tangents</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.bitangents'><code>bitangents</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.colors'><code>colors</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.texture_coords'><code>texture_coords</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.num_uv_components'><code>num_uv_components</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.faces'><code>faces</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.num_bones'><code>num_bones</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.bones'><code>bones</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.material_index'><code>material_index</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.name'><code>name</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.num_anim_meshes'><code>num_anim_meshes</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.anim_meshes'><code>anim_meshes</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../assimp_sys/struct.AiMesh.html' title='assimp_sys::AiMesh'>AiMesh</a></code></h3><div class='impl-items'><h4 id='method.has_positions' class='method'><code>fn <a href='#method.has_positions' class='fnname'>has_positions</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.has_faces' class='method'><code>fn <a href='#method.has_faces' class='fnname'>has_faces</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.has_normals' class='method'><code>fn <a href='#method.has_normals' class='fnname'>has_normals</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.has_tangents_and_bitangents' class='method'><code>fn <a href='#method.has_tangents_and_bitangents' class='fnname'>has_tangents_and_bitangents</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.has_vertex_colors' class='method'><code>fn <a href='#method.has_vertex_colors' class='fnname'>has_vertex_colors</a>(&amp;self, index: <a href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.has_texture_coords' class='method'><code>fn <a href='#method.has_texture_coords' class='fnname'>has_texture_coords</a>(&amp;self, index: <a href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.get_num_uv_channels' class='method'><code>fn <a href='#method.get_num_uv_channels' class='fnname'>get_num_uv_channels</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<h4 id='method.get_num_color_channels' class='method'><code>fn <a href='#method.get_num_color_channels' class='fnname'>get_num_color_channels</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<h4 id='method.has_bones' class='method'><code>fn <a href='#method.has_bones' class='fnname'>has_bones</a>(&amp;self) -&gt; <a href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "assimp_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

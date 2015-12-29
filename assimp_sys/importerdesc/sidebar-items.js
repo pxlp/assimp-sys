@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["AIIMPORTERFLAG_EXPERIMENTAL",""],["AIIMPORTERFLAG_LIMITED_SUPPORT",""],["AIIMPORTERFLAG_SUPPORT_BINARY_FLAVOUR",""],["AIIMPORTERFLAG_SUPPORT_COMPRESSED_FLAVOUR",""],["AIIMPORTERFLAG_SUPPORT_TEXT_FLAVOUR",""]],"fn":[["aiGetImporterDesc",""]],"struct":[["AiImporterDesc",""],["AiImporterFlags",""]]});
