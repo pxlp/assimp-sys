@@ -32,7 +32,9 @@ fn main() {
     println!("cargo:rustc-link-lib=static=assimp");
 
     // Link to libstdc++
-    if target.contains("windows-gnu") || !target.contains("windows") {
+    if target.contains("windows-gnu") {
+        println!("cargo:rustc-flags=-l dylib=stdc++");
+    } else if !target.contains("windows") {
         println!("cargo:rustc-link-lib=stdc++");
     }
 
