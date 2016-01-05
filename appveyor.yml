@@ -1,5 +1,7 @@
 environment:
   matrix:
+  - TARGET: i686-pc-windows-gnu
+    MINGW: 1
   - TARGET: x86_64-pc-windows-gnu
     MSYS_BITS: 64
   - TARGET: i686-pc-windows-gnu
@@ -12,6 +14,10 @@ install:
   - rust-nightly-%TARGET%.exe /VERYSILENT /NORESTART /DIR="C:\Program Files (x86)\Rust"
   - set PATH=%PATH%;C:\Program Files (x86)\Rust\bin
   - if defined MSYS_BITS set PATH=%PATH%;C:\msys64\mingw%MSYS_BITS%\bin;C:\msys64\usr\bin
+  - if defined MINGW SET PATH=%PATH%;C:\MinGW\bin
+  # Workaround for CMake not wanting sh.exe on PATH for MinGW. See http://help.appveyor.com/discussions/problems/3193-cmake-building-for-mingw-issue-with-git-shexe
+  - set PATH=%PATH:C:\Program Files (x86)\Git\bin;=%
+  - set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
   - rustc -V
   - cargo -V
 
