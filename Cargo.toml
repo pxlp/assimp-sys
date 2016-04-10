@@ -2,6 +2,7 @@
 name = "assimp-sys"
 version = "0.0.7"
 authors = ["Lee Jeffery <lee@leejeffery.co.uk>"]
+link = "assimp"
 
 description = "Rust FFI bindings for the Assimp library"
 repository = "https://github.com/Eljay/assimp-sys"
