@@ -10,10 +10,10 @@ license = "MIT"
 readme = "README.md"
 
 build = "build.rs"
-exclude = ["assimp/*"]
 
 [dependencies]
 bitflags = "0.3.2"
+libz-sys = "1.0.0"
 
 [build-dependencies]
 cmake = "0.1"
